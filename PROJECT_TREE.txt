@@ -1,0 +1,48 @@
+AI MYSTERY ROOM
+├── .gitignore
+├── README.md                    # Local setup, environment variables, deploy guide
+├── DESIGN_SYSTEM.md             # Palette, typography, motion design and references
+├── SPEC.md                      # Detailed product + engineering blueprint
+├── PROJECT_TREE.txt
+├── package.json                 # Workspace scripts
+├── render.yaml                  # Render backend blueprint
+├── client/
+│   ├── .env.example
+│   ├── index.html
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── tailwind.config.js
+│   ├── vercel.json               # SPA routing
+│   ├── vite.config.js
+│   └── src/
+│       ├── App.jsx               # Router, header, footer
+│       ├── api.js                # API client + error normalization
+│       ├── main.jsx
+│       ├── styles.css            # Nightshift cinematic UI, responsive design and motion
+│       ├── components/
+│       │   ├── Brand.jsx
+│       │   ├── LoadingState.jsx
+│       │   └── Notice.jsx
+│       └── pages/
+│           ├── Home.jsx
+│           ├── CreateCase.jsx
+│           ├── Investigation.jsx
+│           ├── Accusation.jsx
+│           └── Results.jsx
+└── server/
+    ├── .env.example
+    ├── package.json
+    ├── src/
+    │   ├── app.js                # Express security, CORS, rate limits
+    │   ├── index.js              # Startup + optional MongoDB connection
+    │   ├── data/demoCase.js      # Curated offline-ready playable case
+    │   ├── game/
+    │   │   ├── rules.js           # Difficulty counts + score rules
+    │   │   └── schema.js          # Zod input/output validation
+    │   ├── models/Case.js         # Mongoose case/progress model
+    │   ├── routes/caseRoutes.js  # REST endpoints
+    │   ├── services/
+    │   │   ├── caseService.js     # State transitions + safe DTOs
+    │   │   └── groqService.js     # Groq JSON-schema generation
+    │   └── storage/caseRepository.js # MongoDB + memory fallback
+    └── tests/rules.test.js       # Backend scoring/shape unit tests
